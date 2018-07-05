@@ -1,18 +1,48 @@
 const fs = require('fs');
+const acceptEmailInput = require('./acceptEmailInput');
+const homedir = require('os').homedir();
 
-if (!process.env.TEST_EMAIL_ADDRESS) {
-  throw new Error('Please set the TEST_EMAIL_ADDRESS environment variable');
-}
+const resolveEmail = () => {
+  return new Promise(async resolve => {
+    try {
+      if (!process.env.TEST_EMAIL_ADDRESS) {
+        const inputEmail = await acceptEmailInput();
+        resolve(inputEmail);
+      } else {
+        resolve(process.env.TEST_EMAIL_ADDRESS);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  });
+};
 
-const path = process.env.TEST_EMAIL_PATH || './src/testing-email-path.js';
-const userEmail = process.env.TEST_EMAIL_ADDRESS;
+const generateTestEmail = async () => {
+  try {
+    const userEmail = await resolveEmail();
 
-const text = 'Some text here that has been written to a file';
+    const path = process.env.TEST_EMAIL_FILE || `${homedir}/.test-email.txt`;
+    const userEmailSplit = userEmail.split('@');
+    const currentDate = Date.now();
 
-fs.writeFile('src/writtenFile.txt', text, err => {
-  if (err) throw err;
+    const text = `${userEmailSplit[0]}+${currentDate}@${userEmailSplit[1]}`;
+    const dashArray = new Array(text.length).fill('-');
+    const dashes = dashArray.join('');
 
-  console.log('file written! 🤩\r\n');
-});
+    fs.writeFile(path, text, err => {
+      if (err) throw err;
 
-console.log('ran');
+      console.log(
+        '\x1b[36m%s\x1b[0m',
+        `\r\nEmail generated on ${Date(currentDate)}`
+      );
+      console.log('\x1b[32m%s\x1b[0m', dashes);
+      console.log(text);
+      console.log('\x1b[32m%s\x1b[0m', dashes);
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+generateTestEmail();
