@@ -1,11 +1,12 @@
 {
-  "name": "testing-email-iterator",
+  "name": "testemail",
   "version": "1.0.0",
-  "description": "Simple node app to iterate an email address for testing",
+  "description": "Simple node app to alias an email for testing",
   "main": "src/index.js",
   "author": "Jon Short",
   "license": "MIT",
   "private": true,
+  "bin": "./src/index.js",
   "scripts": {
     "start": "node src/index.js"
   }

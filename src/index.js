@@ -1,15 +1,15 @@
 const fs = require('fs');
 const acceptEmailInput = require('./acceptEmailInput');
-const homedir = require('os').homedir();
+const configFilePath = require('./configFilePath');
 
 const resolveEmail = () => {
   return new Promise(async resolve => {
     try {
       if (!process.env.TEST_EMAIL_ADDRESS) {
+        resolve(process.env.TEST_EMAIL_ADDRESS);
+      } else {
         const inputEmail = await acceptEmailInput();
         resolve(inputEmail);
-      } else {
-        resolve(process.env.TEST_EMAIL_ADDRESS);
       }
     } catch (e) {
       console.error(e);
@@ -21,7 +21,6 @@ const generateTestEmail = async () => {
   try {
     const userEmail = await resolveEmail();
 
-    const path = process.env.TEST_EMAIL_FILE || `${homedir}/.test-email.txt`;
     const userEmailSplit = userEmail.split('@');
     const currentDate = Date.now();
 
@@ -33,11 +32,13 @@ const generateTestEmail = async () => {
     const dashArray = new Array(generatedEmail.length).fill('-');
     const dashes = dashArray.join('');
 
-    const textToWrite = `Provided email: ${userEmail}
-Generated email: ${generatedEmail}
-Date generated: ${dateOfGeneration}`;
+    const textToWrite = `{
+  "provided": "${userEmail}",
+  "generated": "${generatedEmail}",
+  "date": "${dateOfGeneration}"
+}`;
 
-    fs.writeFile(path, textToWrite, err => {
+    fs.writeFile(configFilePath, textToWrite, err => {
       if (err) throw err;
 
       console.log(
