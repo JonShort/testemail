@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const acceptEmailInput = require('./acceptEmailInput');
 const configFilePath = require('./configFilePath');
