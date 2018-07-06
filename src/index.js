@@ -3,7 +3,7 @@ const acceptEmailInput = require('./acceptEmailInput');
 const configFilePath = require('./configFilePath');
 const useExistingQuestion = require('./existing-email/useExistingQuestion');
 
-const resolveEmail = () => {
+const resolveEmailAddress = () => {
   return new Promise(async resolve => {
     try {
       if (process.env.TEST_EMAIL_ADDRESS) {
@@ -30,7 +30,7 @@ const resolveEmail = () => {
 
 const generateTestEmail = async () => {
   try {
-    const userEmail = await resolveEmail();
+    const userEmail = await resolveEmailAddress();
 
     const userEmailSplit = userEmail.split('@');
     const currentDate = Date.now();

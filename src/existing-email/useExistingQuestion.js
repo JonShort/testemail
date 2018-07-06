@@ -10,19 +10,25 @@ const useExistingQuestion = async () => {
       output: process.stdout
     });
 
+    let isUsingExisting = false;
+
     rl.question(`Use ${existingEmail} again? [Y/N]\r\n`, answer => {
-      if (answer.trim().toLowerCase() === 'n') {
-        rl.close();
-        resolve({
-          email: existingEmail,
-          use: false
-        });
+      switch (answer.trim().toLowerCase()) {
+        case 'y':
+          isUsingExisting = true;
+          break;
+
+        case 'n':
+          break;
+
+        default:
+          console.log(`Sorry, I don't understand ${answer}, skipping.`);
       }
 
       rl.close();
       resolve({
         email: existingEmail,
-        use: true
+        use: isUsingExisting
       });
     });
   });

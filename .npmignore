@@ -1,0 +1,8 @@
+# Directories
+.vscode/
+node_modules
+
+# Files
+.prettierrc
+.gitignore
+yarn.lock
