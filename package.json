@@ -1,12 +1,12 @@
 {
   "name": "testemail",
   "version": "1.0.0",
-  "description": "Simple node app to alias an email for testing",
+  "description": "Zero-dependency CLI to generate a uniquely aliased email address for use in testing.",
   "main": "src/index.js",
   "author": "Jon Short",
   "license": "MIT",
   "private": true,
-  "bin": "./src/index.js",
+  "bin": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
   }

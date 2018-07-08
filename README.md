@@ -1,6 +1,6 @@
 # Testemail
 
-Simple zero-dependency CLI to generate a uniquely aliased email address for use in testing.
+Zero-dependency CLI to generate a uniquely aliased email address for use in testing.
 
 Can automatically use a provided email (using env variables), or accepts an email via. the CLI.
 
