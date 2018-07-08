@@ -2,10 +2,16 @@
   "name": "testemail",
   "version": "1.0.0",
   "description": "Zero-dependency CLI to generate a uniquely aliased email address for use in testing.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonShort/testemail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonShort/testemail/issues"
+  },
   "main": "src/index.js",
   "author": "Jon Short",
   "license": "MIT",
-  "private": true,
   "bin": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
