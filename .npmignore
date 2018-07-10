@@ -1,6 +1,7 @@
 # Directories
 .vscode/
 node_modules
+assets/
 
 # Files
 .prettierrc
