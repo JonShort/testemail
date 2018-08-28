@@ -1,4 +1,4 @@
-#testemail
+# testemail
 
 ![Usage example](/assets/usage.gif 'Usage example')
 
