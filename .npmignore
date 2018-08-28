@@ -8,3 +8,4 @@ assets/
 .gitignore
 yarn.lock
 package-lock.json
+**/*.test.js
