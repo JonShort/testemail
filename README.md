@@ -1,6 +1,10 @@
-# testemail
+# Testemail
 
-![Usage example](/assets/usage.gif 'Usage example')
+[![NPM Version](https://badge.fury.io/js/testemail.svg)](https://npmjs.com/package/testemail)
+[![gzipped size](https://img.shields.io/bundlephobia/minzip/testemail.svg)](https://npmjs.com/package/testemail)
+[![NPM Downloads](https://img.shields.io/npm/dm/testemail.svg?style=flat)](https://npmjs.com/package/testemail)
+
+[Usage example](/assets/usage.gif 'Usage example')
 
 Zero-dependency CLI to generate a uniquely aliased email address for use in testing.
 
