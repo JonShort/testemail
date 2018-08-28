@@ -1,4 +1,7 @@
-# testemail
+# Testemail
+
+[![NPM Version](https://badge.fury.io/js/testemail.svg)](https://npmjs.com/package/testemail)
+[![NPM Downloads](https://img.shields.io/npm/dt/testemail.svg?style=flat)](https://npmjs.com/package/testemail)
 
 ![Usage example](/assets/usage.gif 'Usage example')
 
