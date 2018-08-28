@@ -1,9 +1,6 @@
-<h1 align="center">
-  <img src="https://raw.githubusercontent.com/jonshort/testemail/master/assets/logo.png" alt="testemail" title="testemail" width="200">
-  <br>
-    testemail
-  <br>
-</h1>
+#testemail
+
+![Usage example](/assets/usage.gif 'Usage example')
 
 Zero-dependency CLI to generate a uniquely aliased email address for use in testing.
 
