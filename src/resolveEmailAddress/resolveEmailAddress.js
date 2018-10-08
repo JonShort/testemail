@@ -1,0 +1,29 @@
+const acceptEmailInput = require('../acceptEmailInput/acceptEmailInput');
+const useExistingQuestion = require('../useExistingQuestion/useExistingQuestion');
+
+const resolveEmailAddress = () => {
+  return new Promise(async resolve => {
+    try {
+      if (process.env.TEST_EMAIL_ADDRESS) {
+        resolve(process.env.TEST_EMAIL_ADDRESS);
+        return;
+      }
+
+      if (fs.existsSync(configFilePath)) {
+        const { use, email } = await useExistingQuestion();
+
+        if (use) {
+          resolve(email);
+          return;
+        }
+      }
+
+      const inputEmail = await acceptEmailInput();
+      resolve(inputEmail);
+    } catch (e) {
+      console.error(e);
+    }
+  });
+};
+
+module.exports = resolveEmailAddress;

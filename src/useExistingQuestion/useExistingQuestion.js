@@ -1,5 +1,5 @@
 const readline = require('readline');
-const handleExistingFile = require('./handleExistingFile');
+const handleExistingFile = require('../handleExistingFile/handleExistingFile');
 
 const useExistingQuestion = async () => {
   const existingEmail = await handleExistingFile();

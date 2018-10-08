@@ -1,6 +1,6 @@
 const readline = require('readline');
 const fs = require('fs');
-const configFilePath = require('../configFilePath');
+const configFilePath = require('../configFilePath/configFilePath');
 
 const handleExistingFile = () => {
   return new Promise(resolve => {

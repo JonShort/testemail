@@ -17,7 +17,5 @@
     "start": "node src/index.js",
     "test": "jest"
   },
-  "devDependencies": {
-    "jest": "^23.5.0"
-  }
+  "devDependencies": {}
 }
