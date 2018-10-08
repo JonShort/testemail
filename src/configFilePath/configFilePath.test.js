@@ -7,7 +7,7 @@ describe('configFilePath', () => {
     // reset the env variables to initial state
     process.env = OLD_ENV;
     // reset the modules which were required during the test (if any)
-    jest.resetModules();
+    delete require.cache[require.resolve('./configFilePath')];
   });
 
   it('should return contents of TEST_EMAIL_ADDRESS env var', () => {

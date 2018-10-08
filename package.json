@@ -15,7 +15,9 @@
   "bin": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "mocha --recursive './src/**/*.test.js'"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
