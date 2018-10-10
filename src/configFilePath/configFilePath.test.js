@@ -1,4 +1,5 @@
 const assert = require('assert');
+const homedir = require('os').homedir();
 
 describe('configFilePath', () => {
   const OLD_ENV = Object.assign({}, process.env);
@@ -10,15 +11,23 @@ describe('configFilePath', () => {
     delete require.cache[require.resolve('./configFilePath')];
   });
 
-  it('should return contents of TEST_EMAIL_ADDRESS env var', () => {
+  it('should return contents of TEST_EMAIL_ADDRESS env var if existing', () => {
     // set env var
     process.env.TEST_EMAIL_FILE = 'testhere/test.json';
-
-    console.log(process.env.TEST_EMAIL_FILE);
 
     // must be required here as value is resolved on require
     const configFilePath = require('./configFilePath');
 
     assert.equal(configFilePath, process.env.TEST_EMAIL_FILE);
+  });
+
+  it('should return os homedir if no TEST_EMAIL_ADDRESS env var exists', () => {
+    // set env var
+    process.env.TEST_EMAIL_FILE = undefined;
+
+    // must be required here as value is resolved on require
+    const configFilePath = require('./configFilePath');
+
+    assert.equal(configFilePath, `${homedir}/.test-email.json`);
   });
 });
