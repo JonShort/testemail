@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const readline = require('readline');
 
+const errorMessage = '\r\nProvided email is invalid';
+
 const acceptEmailInput = () => {
   return new Promise((resolve, reject) => {
     const rl = readline.createInterface({
@@ -18,7 +20,7 @@ const acceptEmailInput = () => {
       rl.close();
 
       if (!isAnswerValid) {
-        reject(new Error('Provided email is invalid'));
+        reject(errorMessage);
       } else {
         console.log(
           '\x1b[2m%s\x1b[0m',
@@ -30,4 +32,9 @@ const acceptEmailInput = () => {
   });
 };
 
-module.exports = acceptEmailInput;
+module.exports = {
+  acceptEmailInput,
+  _private: {
+    errorMessage
+  }
+};

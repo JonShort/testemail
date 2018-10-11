@@ -1,6 +1,9 @@
 const assert = require('assert');
 
-const acceptEmailInput = require('./acceptEmailInput');
+const {
+  acceptEmailInput,
+  _private: { errorMessage }
+} = require('./acceptEmailInput');
 
 describe('acceptEmailInput', () => {
   let stdin;
@@ -9,7 +12,7 @@ describe('acceptEmailInput', () => {
     stdin = require('mock-stdin').stdin();
   });
 
-  it('asks for email address', async () => {
+  it('returns same input if valid email', async () => {
     const providedEmail = 'test@test.com';
 
     process.nextTick(() => {
@@ -18,6 +21,20 @@ describe('acceptEmailInput', () => {
 
     const result = await acceptEmailInput();
 
-    assert.equal(result, providedEmail);
+    expect(result).toBe(providedEmail);
+  });
+
+  it('throws if the provided email is invalid', async () => {
+    const providedEmail = 'invalid!';
+
+    process.nextTick(() => {
+      stdin.send(`${providedEmail}\r`);
+    });
+
+    try {
+      await acceptEmailInput();
+    } catch (err) {
+      expect(err).toBe(errorMessage);
+    }
   });
 });

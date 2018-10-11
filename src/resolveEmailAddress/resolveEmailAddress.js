@@ -1,5 +1,5 @@
 const fs = require('fs');
-const acceptEmailInput = require('../acceptEmailInput/acceptEmailInput');
+const { acceptEmailInput } = require('../acceptEmailInput/acceptEmailInput');
 const useExistingQuestion = require('../useExistingQuestion/useExistingQuestion');
 const configFilePath = require('../configFilePath/configFilePath');
 
@@ -23,7 +23,7 @@ const resolveEmailAddress = () => {
       const inputEmail = await acceptEmailInput();
       resolve(inputEmail);
     } catch (e) {
-      console.error(e);
+      console.error('\x1b[31m%s\x1b[0m', e);
     }
   });
 };

@@ -1,4 +1,3 @@
-const assert = require('assert');
 const homedir = require('os').homedir();
 
 describe('configFilePath', () => {
@@ -18,7 +17,7 @@ describe('configFilePath', () => {
     // must be required here as value is resolved on require
     const configFilePath = require('./configFilePath');
 
-    assert.equal(configFilePath, process.env.TEST_EMAIL_FILE);
+    expect(configFilePath).toBe(process.env.TEST_EMAIL_FILE);
   });
 
   it('should return os homedir if no TEST_EMAIL_ADDRESS env var exists', () => {
@@ -28,6 +27,6 @@ describe('configFilePath', () => {
     // must be required here as value is resolved on require
     const configFilePath = require('./configFilePath');
 
-    assert.equal(configFilePath, `${homedir}/.test-email.json`);
+    expect(configFilePath).toBe(`${homedir}/.test-email.json`);
   });
 });
