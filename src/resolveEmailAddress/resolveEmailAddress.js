@@ -1,5 +1,7 @@
+const fs = require('fs');
 const acceptEmailInput = require('../acceptEmailInput/acceptEmailInput');
 const useExistingQuestion = require('../useExistingQuestion/useExistingQuestion');
+const configFilePath = require('../configFilePath/configFilePath');
 
 const resolveEmailAddress = () => {
   return new Promise(async resolve => {

@@ -10,12 +10,14 @@ describe('acceptEmailInput', () => {
   });
 
   it('asks for email address', async () => {
+    const providedEmail = 'test@test.com';
+
     process.nextTick(() => {
-      stdin.send('test@test.com\r');
+      stdin.send(`${providedEmail}\r`);
     });
 
     const result = await acceptEmailInput();
 
-    console.log(result);
+    assert.equal(result, providedEmail);
   });
 });
