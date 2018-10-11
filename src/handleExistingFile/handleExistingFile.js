@@ -1,11 +1,13 @@
-const readline = require('readline');
 const fs = require('fs');
 const configFilePath = require('../configFilePath/configFilePath');
 
 const handleExistingFile = () => {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     fs.readFile(configFilePath, 'utf8', (err, data) => {
-      if (err) throw err;
+      if (err) {
+        reject(err);
+        return;
+      }
 
       const obj = JSON.parse(data);
 

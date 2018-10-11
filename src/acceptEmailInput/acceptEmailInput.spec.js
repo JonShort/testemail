@@ -33,6 +33,7 @@ describe('acceptEmailInput', () => {
 
     try {
       await acceptEmailInput();
+      expect('this should not be executed due to error catch').toBe(false);
     } catch (err) {
       expect(err).toBe(errorMessage);
     }
