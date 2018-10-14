@@ -38,9 +38,7 @@ describe('configFilePath', () => {
       await handleExistingFile();
       expect('this should not be executed due to error catch').toBe(false);
     } catch (err) {
-      expect(err).toEqual(
-        "ENOENT: no such file or directory, open './doesnotexist.json'"
-      );
+      expect(err.code).toEqual('ENOENT');
     }
   });
 });
