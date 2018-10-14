@@ -13,6 +13,11 @@
   "author": "Jon Short",
   "license": "MIT",
   "bin": "src/index.js",
+  "files": [
+    "src/**/*.js",
+    "!src/**/__mocks__/**",
+    "!src/**/*.spec.js"
+  ],
   "jest": {
     "automock": true
   },
