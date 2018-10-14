@@ -1,6 +1,6 @@
 const fs = require('fs');
 const resolveEmailAddress = require('../resolveEmailAddress/resolveEmailAddress');
-const configFilePath = require('../configFilePath/configFilePath');
+const { configFilePath } = require('../configFilePath/configFilePath');
 
 const generateTestEmail = async () => {
   try {

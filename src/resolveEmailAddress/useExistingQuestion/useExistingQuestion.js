@@ -1,5 +1,7 @@
 const readline = require('readline');
-const handleExistingFile = require('./handleExistingFile/handleExistingFile');
+const {
+  handleExistingFile
+} = require('./handleExistingFile/handleExistingFile');
 
 const errorMessage = answer => `Sorry, I don't understand ${answer}, skipping.`;
 

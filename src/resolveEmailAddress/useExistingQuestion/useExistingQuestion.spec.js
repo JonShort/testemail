@@ -23,10 +23,7 @@ describe('useExistingQuestion', () => {
 
   it('should return email and set use to true when user agrees to prompt', async () => {
     // set env var which is used as source of data.
-    process.env.TEST_EMAIL_FILE = path.resolve(
-      __dirname,
-      '../../../test/mockData.json'
-    );
+    process.env.TEST_EMAIL_FILE = path.resolve('test/mockData.json');
 
     // must be required here as value is resolved on require
     const mockedData = require(process.env.TEST_EMAIL_FILE);
@@ -44,10 +41,7 @@ describe('useExistingQuestion', () => {
 
   it('should return email and set use to false when user disagrees with prompt', async () => {
     // set env var which is used as source of data.
-    process.env.TEST_EMAIL_FILE = path.resolve(
-      __dirname,
-      '../../../test/mockData.json'
-    );
+    process.env.TEST_EMAIL_FILE = path.resolve('test/mockData.json');
 
     // must be required here as value is resolved on require
     const mockedData = require(process.env.TEST_EMAIL_FILE);
@@ -65,10 +59,7 @@ describe('useExistingQuestion', () => {
 
   it('should return email and set use to false when user responds with unsupported answer', async () => {
     // set env var which is used as source of data.
-    process.env.TEST_EMAIL_FILE = path.resolve(
-      __dirname,
-      '../../../test/mockData.json'
-    );
+    process.env.TEST_EMAIL_FILE = path.resolve('test/mockData.json');
 
     // must be required here as value is resolved on require
     const mockedData = require(process.env.TEST_EMAIL_FILE);

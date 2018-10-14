@@ -15,7 +15,7 @@ describe('configFilePath', () => {
     process.env.TEST_EMAIL_FILE = 'testhere/test.json';
 
     // must be required here as value is resolved on require
-    const configFilePath = require('./configFilePath');
+    const { configFilePath } = require('./configFilePath');
 
     expect(configFilePath).toBe(process.env.TEST_EMAIL_FILE);
   });
@@ -25,7 +25,7 @@ describe('configFilePath', () => {
     process.env.TEST_EMAIL_FILE = undefined;
 
     // must be required here as value is resolved on require
-    const configFilePath = require('./configFilePath');
+    const { configFilePath } = require('./configFilePath');
 
     expect(configFilePath).toBe(`${homedir}/.test-email.json`);
   });

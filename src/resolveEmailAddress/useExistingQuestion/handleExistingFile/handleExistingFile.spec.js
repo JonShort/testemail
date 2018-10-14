@@ -1,4 +1,3 @@
-const homedir = require('os').homedir();
 const path = require('path');
 
 describe('handleExistingFile', () => {
@@ -12,14 +11,11 @@ describe('handleExistingFile', () => {
   });
 
   it('should return the `provided` value from the data file sourced', async () => {
-    // set env var which is used as source of data.
-    process.env.TEST_EMAIL_FILE = path.resolve(
-      __dirname,
-      '../../../../test/mockData.json'
-    );
+    // set env var which is used as source of data
+    process.env.TEST_EMAIL_FILE = path.resolve('test/mockData.json');
 
     // must be required here as value is resolved on require
-    const handleExistingFile = require('./handleExistingFile');
+    const { handleExistingFile } = require('./handleExistingFile');
 
     const mockedData = require(process.env.TEST_EMAIL_FILE);
     const result = await handleExistingFile();
@@ -32,7 +28,7 @@ describe('handleExistingFile', () => {
     process.env.TEST_EMAIL_FILE = './doesnotexist.json';
 
     // must be required here as value is resolved on require
-    const handleExistingFile = require('./handleExistingFile');
+    const { handleExistingFile } = require('./handleExistingFile');
 
     try {
       await handleExistingFile();
