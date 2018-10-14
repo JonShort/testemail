@@ -2,6 +2,8 @@ const {
   acceptEmailInput,
   _private: { errorMessage }
 } = require('./acceptEmailInput');
+jest.unmock('./acceptEmailInput');
+jest.unmock('mock-stdin');
 
 describe('acceptEmailInput', () => {
   let stdin;

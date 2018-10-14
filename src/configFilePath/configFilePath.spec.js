@@ -1,4 +1,5 @@
 const homedir = require('os').homedir();
+jest.unmock('./configFilePath');
 
 describe('configFilePath', () => {
   const OLD_ENV = Object.assign({}, process.env);

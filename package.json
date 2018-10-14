@@ -13,6 +13,9 @@
   "author": "Jon Short",
   "license": "MIT",
   "bin": "src/index.js",
+  "jest": {
+    "automock": true
+  },
   "scripts": {
     "start": "node src/index.js",
     "test": "jest"

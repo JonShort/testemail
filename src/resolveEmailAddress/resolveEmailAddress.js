@@ -30,4 +30,4 @@ const resolveEmailAddress = () => {
   });
 };
 
-module.exports = resolveEmailAddress;
+module.exports = { resolveEmailAddress };
