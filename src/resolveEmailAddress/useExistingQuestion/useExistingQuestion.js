@@ -1,5 +1,7 @@
 const readline = require('readline');
-const handleExistingFile = require('../handleExistingFile/handleExistingFile');
+const handleExistingFile = require('./handleExistingFile/handleExistingFile');
+
+const errorMessage = answer => `Sorry, I don't understand ${answer}, skipping.`;
 
 const useExistingQuestion = async () => {
   const existingEmail = await handleExistingFile();
@@ -22,7 +24,7 @@ const useExistingQuestion = async () => {
           break;
 
         default:
-          console.log(`Sorry, I don't understand ${answer}, skipping.`);
+          console.log(errorMessage(answer));
       }
 
       rl.close();
@@ -34,4 +36,9 @@ const useExistingQuestion = async () => {
   });
 };
 
-module.exports = useExistingQuestion;
+module.exports = {
+  useExistingQuestion,
+  _private: {
+    errorMessage
+  }
+};

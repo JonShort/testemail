@@ -1,7 +1,7 @@
 const homedir = require('os').homedir();
 const path = require('path');
 
-describe('configFilePath', () => {
+describe('handleExistingFile', () => {
   const OLD_ENV = Object.assign({}, process.env);
 
   afterEach(() => {
@@ -15,7 +15,7 @@ describe('configFilePath', () => {
     // set env var which is used as source of data.
     process.env.TEST_EMAIL_FILE = path.resolve(
       __dirname,
-      '../../test/mockData.json'
+      '../../../../test/mockData.json'
     );
 
     // must be required here as value is resolved on require

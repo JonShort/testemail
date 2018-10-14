@@ -1,5 +1,5 @@
 const fs = require('fs');
-const configFilePath = require('../configFilePath/configFilePath');
+const configFilePath = require('../../../configFilePath/configFilePath');
 
 const handleExistingFile = () => {
   return new Promise((resolve, reject) => {

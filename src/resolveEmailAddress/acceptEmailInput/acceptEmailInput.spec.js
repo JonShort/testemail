@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 const {
   acceptEmailInput,
   _private: { errorMessage }
