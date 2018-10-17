@@ -33,6 +33,8 @@ yarn global add testemail
 
 ## Usage
 
+> note - this package support node >=8
+
 In terminal / cmd:
 
 ```bash
@@ -44,26 +46,6 @@ This will either:
 - Generate an aliased email instantly
 - Allow you to enter an email address to be aliased
 - Allow you to use the email address previously used
-
-## Tests
-
-All modules (anything other than `index.js`) should include unit tests. These are written using [jest](https://jestjs.io/).
-
-> **automock** - The option `automock` is set to `true` in the jest config of this library. This means any `require` statement will use the mock instead of the actual module. This can be overriden using `jest.unmock('./path-to-import.js')`.
-
-To run tests, in terminal / cmd:
-
-_With npm_
-
-```bash
-npm run test
-```
-
-_With Yarn_
-
-```bash
-yarn test
-```
 
 ## Advanced usage / configuration
 
@@ -89,3 +71,25 @@ An example of this file is:
 ```
 
 The location this file is stored can be configured with the optional `TEST_EMAIL_FILE` environment variable. This should be relative to root, e.g. `~/jon/Documents/email-file/my-test-email.json`.
+
+## Development
+
+### Tests
+
+All modules (anything other than `index.js`) should include unit tests. These are written using [jest](https://jestjs.io/).
+
+> **automock** - The option `automock` is set to `true` in the jest config of this library. This means any `require` statement will use the mock instead of the actual module. This can be overriden using `jest.unmock('./path-to-import.js')`.
+
+To run tests, in terminal / cmd:
+
+_With npm_
+
+```bash
+npm run test
+```
+
+_With Yarn_
+
+```bash
+yarn test
+```

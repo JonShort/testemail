@@ -12,6 +12,10 @@
   "main": "src/index.js",
   "author": "Jon Short",
   "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "engineStrict": true,
   "bin": "src/index.js",
   "files": [
     "src/**/*.js",
