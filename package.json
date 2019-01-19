@@ -23,7 +23,8 @@
     "!src/**/*.spec.js"
   ],
   "jest": {
-    "automock": true
+    "automock": true,
+    "testEnvironment": "node"
   },
   "scripts": {
     "start": "node src/index.js",
