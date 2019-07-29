@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/JonShort/testemail.git"
   },
+  "installConfig": {
+    "pnp": true
+  },
   "bugs": {
     "url": "https://github.com/JonShort/testemail/issues"
   },
@@ -31,7 +34,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "mock-stdin": "^0.3.1"
   }
 }
