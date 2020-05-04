@@ -6,9 +6,6 @@
     "type": "git",
     "url": "git+https://github.com/JonShort/testemail.git"
   },
-  "installConfig": {
-    "pnp": true
-  },
   "bugs": {
     "url": "https://github.com/JonShort/testemail/issues"
   },
