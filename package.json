@@ -34,7 +34,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^24.8.0",
-    "mock-stdin": "^0.3.1"
+    "jest": "^26.0.0",
+    "mock-stdin": "^1.0.0"
   }
 }
