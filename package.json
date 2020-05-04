@@ -16,7 +16,7 @@
   "author": "Jon Short",
   "license": "MIT",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "engineStrict": true,
   "bin": "src/index.js",
