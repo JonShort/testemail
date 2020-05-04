@@ -6,9 +6,6 @@
     "type": "git",
     "url": "git+https://github.com/JonShort/testemail.git"
   },
-  "installConfig": {
-    "pnp": true
-  },
   "bugs": {
     "url": "https://github.com/JonShort/testemail/issues"
   },
@@ -16,7 +13,7 @@
   "author": "Jon Short",
   "license": "MIT",
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "engineStrict": true,
   "bin": "src/index.js",
@@ -34,7 +31,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^24.8.0",
-    "mock-stdin": "^0.3.1"
+    "jest": "^26.0.0",
+    "mock-stdin": "^1.0.0"
   }
 }

@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Travis CI config
 - Unit tests
 
+### Changed
+
+- Versions of Node below 10 no longer explicitly supported
+
 ## [1.0.0] - 2017-06-20
 
 ### Added
